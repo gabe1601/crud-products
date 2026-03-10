@@ -38,9 +38,9 @@ public class ProductController {
         return productService.getAllProducts(pageable);
     }
 
-    @GetMapping
+    @GetMapping("/filter")
     @ResponseBody
-    public List<ProductResponseDTO> searchProdutc(@PathVariable String name){
+    public List<ProductResponseDTO> searchProdutc(@RequestParam String name){
         return productService.getProductName(name);
     }
 

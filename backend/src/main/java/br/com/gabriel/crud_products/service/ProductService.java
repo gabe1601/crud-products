@@ -6,6 +6,7 @@ import br.com.gabriel.crud_products.dto.ProductUpdateDTO;
 import br.com.gabriel.crud_products.model.Product;
 import br.com.gabriel.crud_products.repository.ProductRepository;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,7 +50,6 @@ public class ProductService {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("{/id}")
     public void deleteProducts(Long id){
         repository.deleteById(id);
     }
@@ -64,6 +64,11 @@ public class ProductService {
     }
 
     public List<ProductResponseDTO> getProductName(String name) {
-        return ;
+
+        Pageable pageable = PageRequest.of(0,10);
+
+        Page<Product> page = repository.findByProductName(name, pageable);
+
+        return page.map(ProductResponseDTO::fromEntity).toList();
     }
 }

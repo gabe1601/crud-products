@@ -35,11 +35,11 @@ function ProductForm({onProductSaved}){
     };
 
     return( 
-        <div class="">
-            <h2 class="text-4xl font-bold">CADASTRO DE PRODUTOS</h2>
+        <div className="">
+            <h2 className="text-4xl font-bold">CADASTRO DE PRODUTOS</h2>
 
-            <div class="flex flex-row  items-center">
-                <div class="p-8 grid grid-cols-3 gap-10
+            <div className="flex flex-row  items-center">
+                <div className="p-8 grid grid-cols-3 gap-10
                     w-full
                     mas-w-[600px]
                     lg:max-w[900px]
@@ -48,7 +48,7 @@ function ProductForm({onProductSaved}){
                     lg:h-[90px]
                     xl:h-[110px]
                     ">
-                    <input class="border rounded-md p-1 shadow-md focus:outline-none"
+                    <input className="border rounded-md p-1 shadow-md focus:outline-none"
                         text="text"
                         placeholder="Nome Produto"
                         value={name}
@@ -56,7 +56,7 @@ function ProductForm({onProductSaved}){
                     />
 
                     <input
-                        class="border rounded-md p-1 shadow-md focus:outline-none"
+                        className="border rounded-md p-1 shadow-md focus:outline-none"
                         text="number"
                         placeholder="Valor Produto"
                         value={price}
@@ -64,15 +64,15 @@ function ProductForm({onProductSaved}){
                     />
 
                     <input
-                        class="border rounded-md p-1 shadow-md focus:outline-none"
+                        className="border rounded-md p-1 shadow-md focus:outline-none"
                         text="number"
                         placeholder="Quantidade de estoque"
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)}
                     />
                 </div>
-                <div class="grid gap-2">
-                    <button onClick={handleSubmit} class="bg-sky-500 hover:bg-sky-700 border rounded-md h-10 w-30 shadow-md cursor-pointer">
+                <div className="grid gap-2">
+                    <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-700 border rounded-md h-10 w-30 shadow-md cursor-pointer">
                         Cadastrar
                     </button>
                 </div>
